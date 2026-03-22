@@ -3,8 +3,7 @@
 // Fallback: localStorage (for Netlify demo without backend)
 
 const USE_LOCAL_FALLBACK = false // Set to false when PocketBase server is running
-
-let pb = null
+const pb = new PocketBase(import.meta.env.VITE_PB_URL || 'http://127.0.0.1:8090');
 
 async function getPb() {
   if (pb) return pb
